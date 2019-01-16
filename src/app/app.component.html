@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="previousComic()">
+    <mat-icon>arrow_back</mat-icon> Previous
+  </button>
+  <span class="toolbar-row" *ngIf="currentComic">{{currentComic.title}}</span>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="newComic()">
+      <mat-icon>theaters</mat-icon>
+      <span>New Comic</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+<app-display *ngIf="currentComic" [imageUrl]="currentComic.img"></app-display>
+<mat-progress-spinner *ngIf="isLoading" color="accent" mode="indeterminate"></mat-progress-spinner>

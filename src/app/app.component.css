@@ -1,0 +1,11 @@
+span.toolbar-row {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+mat-progress-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0px 0px -50px;
+}
